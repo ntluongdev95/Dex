@@ -1,0 +1,12 @@
+$textBigColor:white;
+$text_hover:#f06600;
+$border_color:#c45715;
+$bannerColor:#f06600;
+$textSmallColor:#b1b1b4;
+$backgroundColor:#1f1e29;
+@mixin display($justifyContent) {
+    display: flex;
+    align-items: center;
+    justify-content: $justifyContent;
+   
+}

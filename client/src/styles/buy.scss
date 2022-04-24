@@ -1,0 +1,97 @@
+@import '../golobal.scss';
+.buy_wrapper{
+    background-color: #1f1e29;
+    height: 800px;
+    width: 100%;
+    padding:60px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 40px;
+    color:#bbbbbe;
+    .buy_card{
+       border-radius: 15px;
+       .buy_card-header{
+           height: 240px;
+           background-color: #1f1e29;
+           background-image: none;
+           @include display(center);
+           img{
+            box-shadow: 0 0 10px 0 #e98d0c inset, 0 0 20px 2px #e98d0c ;
+            border-radius: 50%;
+            height: 100px;
+            object-fit: contain;
+           }
+       }
+       .but_card-body{
+           padding:40px;
+           background-color:#18171f ;
+           .title{
+             display: flex;
+             margin-bottom: 20px;
+             h1{
+                 font-size: 1.7rem;
+             }
+             .button_chart{
+                display: flex;
+                margin-left: 20%;
+                padding:5px 10px;
+                border:1px solid white;
+                border-radius: 5px;
+                cursor: pointer;
+                img{
+                    width: 15px;
+                    height: 15px;
+                }
+                h5{
+                    color:white;
+                    margin-left: 10px;
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+            }
+           }
+           .content{
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            line-height: 30px;
+            span{
+                color:$border_color;
+                font-weight: 600;
+            }
+           }
+           .buy_button{
+               padding:16px 20px;
+               border-radius: 30px;
+               position: relative;
+               width: 40%;
+               text-align: center;
+               margin-top: 20px;
+               cursor: pointer;
+               background-image: linear-gradient(84deg, #f28b03, #f06500);
+               a{
+                   color:white;
+                   text-decoration: none;
+               }
+               .buy_layer{
+                   position: absolute;
+                   left: 0%;
+                   top: 0%;
+                    right: 0%;
+                   bottom: 0%;
+                   z-index: 3;
+                   @include display(center);
+                   transition: .6s ease;
+                  background-color: #f00500;
+                  border-radius: 30px;
+                  color: white;
+                  opacity: 0;
+               }
+               &:hover{
+                .buy_layer{
+                    opacity: 1;
+                }
+               }
+           }
+       }
+    }
+}

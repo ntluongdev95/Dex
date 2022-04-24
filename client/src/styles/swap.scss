@@ -1,0 +1,316 @@
+@import '../golobal.scss';
+.swap{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color:#151824 ;
+    .swap_header{
+        padding:10px 30px;
+        width: 100%;
+        position: fixed;
+        z-index: 9;
+        background-color:#151824;
+       @include display(space-between);
+        color:white;
+        height: 80px;
+        border-bottom: 1px solid white;
+        .header_left{
+            @include display(none);
+            .header_left-logo{
+                @include display(none);
+                cursor: pointer;
+                img{
+                    height: 60px;width: 60px;
+                    border-radius: 50%;
+                }
+                h1{
+                    color:#ffbe47;
+                    margin-left: 10px;
+                }
+            }
+            .tvl{
+                background-origin: border-box;
+                background-clip: padding-box,border-box;
+                border: 3px double transparent;
+                margin-left: 30px;
+                padding:6px 10px;
+                cursor: pointer;
+                color:yellowgreen;
+                background-image: linear-gradient(#10121b,#10121b),radial-gradient(circle at left top,rgb(17, 189, 69),#8f1414);
+                font-weight: 600;
+                border-radius: 16px;
+                span{
+                    margin-left: 10px;
+                }
+            }
+        }
+        .header_right{
+            display: flex;
+            list-style: none;
+            .show_price{
+                width: 11.688rem;
+                padding: 0.4rem 0.6rem;
+                display: flex;
+                text-transform: uppercase;
+                flex-direction: row;
+                justify-content: space-between;
+                border-radius: 80px;
+                background-image: linear-gradient(#10121b,#10121b),radial-gradient(circle at left top,#ffa409,#2d324b);
+                background-origin: border-box;
+                background-clip: padding-box,border-box;
+                border: 3px double transparent;
+                max-height: 36.8px;
+                font-family: "Kanit";
+                font-weight: 600;
+                margin-right: 8px;
+            }
+            .connect_wallet{
+                width: 11.688rem;
+                border-radius: 25px;
+                border: 3px solid #383648;
+                background-color: #d5d5d5;
+                font-size: 13pt;
+                @include display(center);
+                font-size: 1rem;
+                font-weight: 600;
+                color:black;
+                margin-right: 10px;
+                &.account{
+                    width: 8.688rem;
+                }
+            }
+            .menu{
+                color: #ffa409;
+                cursor: pointer;
+                width: 7.688rem;
+                padding: 0.4rem 0.6rem;
+                display: flex;
+                text-transform: uppercase;
+                flex-direction: row;
+                justify-content: space-between;
+                border-radius: 80px;
+                background-image: linear-gradient(#10121b,#10121b),radial-gradient(circle at left top,#ffa409,#2d324b);
+                background-origin: border-box;
+                background-clip: padding-box,border-box;
+                border: 3px double transparent;
+                max-height: 36.8px;
+                font-weight: 600;
+                margin-right: 8px;
+            }
+        }
+    }
+    .swap_section{
+        position: absolute;
+        top:80px;
+        color:white;
+        left:0;
+        background-color: inherit;
+        height: 800px;
+        right:0;
+        .swap_section-center{
+            width: 70%;
+            display: flex;
+            margin: 30px auto;
+            .back_btn{
+                background-color: #1c1c24;
+                box-shadow: 4px 4px 12px rgba(black,.9);
+                border-radius: 15px;
+                margin:0 auto;
+                height: 50px;
+                width: 50px;
+                @include display(center)
+            }
+            .swap_content{
+                width: 50%;
+                padding:20px;
+                background-color: #0f111a;
+                margin-right: 20px;
+                box-shadow: 2px 2px 12px rgba(black,.9);
+                .swap_content-header{
+                    display: flex;
+                    justify-content: space-between;
+                .swap_content-left{
+                   h6{
+                       font-size: 1rem;
+                   }
+                }
+                .swap_content-right{
+                    height: 50px;
+                    width: 50px;
+                    box-shadow: 4px 4px 12px rgba(black,.9);
+                    border-radius: 15px;
+                    @include display(center)
+                }}
+                .swap_form{
+                    width: 100%;
+                    margin-top: 50px;
+                    background-color:#272933 ;
+                    border-radius: 10px;
+                    padding:30px 20px ;
+                    .breakline {
+                        margin-top: 20px;
+                        width: 100%;
+                        height: 1px;
+                        background: #20222b;
+                    }
+                    .analytics{
+                        margin-top: 20px;
+                        background-color: #151720;
+                        border-radius: 15px;
+                        padding:30px 20px 15px 20px;
+                        .row{
+                            @include display(space-between);
+                            margin-bottom: 10px;
+                            color:#999a9c;
+                            .percentage{
+                                color:#5bb754;
+                            }
+                        }
+                        .analytics_link{
+                            text-decoration: none;
+                            text-align: center;
+                            margin: 30px 0 0 0 ;
+                            font-size: 1.1rem;
+                            color:#999a9c;
+                            cursor: pointer;
+                        }
+                    }
+                    .from{
+                      @include display(none);
+                      padding:5px 10px;
+                      border-radius: 20px;
+                      background-color: #151720;
+                      cursor: pointer;
+                      img{
+                          height: 60px;
+                          width: 60px;
+                          border-radius: 50%;
+                      }
+                      .from_option{
+                          width: 100px;
+                          margin-left: 25px;
+                          .small{
+                            color:white;
+
+                          }
+                           h1{
+                             color:#b7b7ba;
+                            }
+                          
+                      }
+                      input{
+                        background: transparent;
+                        border:none;
+                        outline: none;
+                        width: 130px;
+                        margin-left: 20px;
+                        color:#b7b7ba;
+                        font-size: 1.8rem;
+                    }
+                    }
+                    .to{
+                        @include display(none);
+                        padding:5px 10px;
+                        border-radius: 20px;
+                        background-color: #151720;
+                        img{
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                        }
+                            .to_option{
+                                width: 100px;
+                                margin-left: 25px;
+                                .small{
+                                    width: 100px;
+                                    overflow-x: hidden;
+                                    color:white;
+                                }
+                                h1{
+                                    color:#b7b7ba;
+  
+                                }
+                            }
+                            input{
+                                background-color: transparent;
+                                outline: none;
+                                width: 130px;
+                                border: none;
+                                color:#b7b7ba;
+                                margin-left: 20px;
+                                padding-right: 10px;
+                                font-size: 1.8rem;
+                               
+                                
+                            }
+                    }
+                    .buy_sell{
+                        @include display(space-between);
+                        .connect_btn{
+                        width: 45%;
+                        padding:20px;
+                        text-align: center;
+                        border-radius: 20px;
+                        font-size: 1rem;
+                        border:none;
+                        cursor: pointer;
+                        color:white;
+                        margin-top: 30px;
+                        font-weight: 600;
+                        &.buy{
+                           background-color: grey;
+                           &.active{
+                            background-color:#37e22b;
+                            &:hover{
+                                box-shadow: 1px 2px 12px rgba(#37e22b,.6);
+                            }
+                        }
+                        }
+                        &.sell{
+                            background-color: grey;
+                            &.active{
+                                background-color:red;
+                                &:hover{
+                                    box-shadow: 1px 2px 12px rgba(red,.6);
+                                   }
+                            }
+                           
+                        }
+                        }
+                    }
+                    .swap__btn{
+                        width: 100%;
+                        padding:20px;
+                        text-align: center;
+                        border-radius: 20px;
+                        font-size: 1rem;
+                        border:none;
+                        cursor: pointer;
+                        color:black;
+                        background-color: white;
+                        margin-top: 30px;
+                        font-weight: 600;
+                        transition: .3s ease;
+                        &:hover{
+                            background-color: lightgray;
+                           }
+                    }
+                }
+                
+            }
+            .swap_coming-event{
+                width: 40%;
+                .event{
+                    box-shadow: 4px 4px 12px rgba(black,.9);
+                    height: 300px;
+                    font-size: 20px;
+                    background-color: #141722;
+                    margin-bottom: 20px;
+                    border-radius: 20px;
+                    @include display(center)
+                }
+            }
+
+        }
+    }
+}

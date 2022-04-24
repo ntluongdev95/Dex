@@ -1,0 +1,66 @@
+@import '../golobal.scss';
+.guide__wrapper{
+    padding:60px 40px;
+    color:white;
+    .guide_title{
+       font-size: 2.5rem;
+       line-height: 36px;
+       margin: 80px 0;
+    }
+    .guide_detail{
+        background-color:#18171f ;
+        padding: 40px ;
+        border-radius: 20px;
+        margin-bottom: 80px;
+        .guide_detail-line{
+            @include display(none);
+            .guide_line-left{
+                @include display(none);
+                .guide_line-number{
+                    height: 70px;
+                    width: 70px;
+                    @include display(center);
+                    border-radius: 50%;
+                    background-color: #1f1e29;
+                }
+                .guide_line-yellowline{
+                    width: 80px;
+                    height: 1px;
+                    margin-right: 32px;
+                    margin-left: 32px;
+                    background-color: #f28b03;
+                }
+            }
+            .guide_line-right{
+                display: flex;
+                width: 100%;
+                max-width: 877px;
+                padding-top: 23px;
+                flex-direction: column;
+                align-items: flex-start;
+                .h3{
+                    margin-top: 30px;
+                    margin-right: 32px;
+                    margin-bottom: 0px;
+                    color: #fff;
+                    font-size: 30px;
+                    line-height: 46px;
+                }
+                .p{
+                    line-height: 30px;
+                    color:#9e9ea2;
+                    font-size: 1.2rem;
+                }
+            }
+
+        }
+        .divider{
+        width: 100%;
+        height: 1px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        background-color: #292831;
+        }
+
+    }
+}

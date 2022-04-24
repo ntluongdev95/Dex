@@ -1,0 +1,15 @@
+@import '../golobal.scss';
+.wrapper{
+    background-color: $backgroundColor;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    scroll-snap-type: y mandatory;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    &::-webkit-scrollbar{
+            display: none;
+     }
+     
+}

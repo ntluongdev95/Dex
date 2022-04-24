@@ -1,0 +1,31 @@
+@import '../golobal.scss';
+
+.art__wrapper{
+   background-color: #1c1b24;
+   .art_title{
+    font-size: 2.5rem;
+   // line-height: 36px;
+   text-align: center;
+   padding:50px 0;
+    color:white;
+   }
+   .p{
+    line-height: 30px;
+    color:#9e9ea2;
+    font-size: 1.2rem;
+    text-align: center;
+    padding:0 110px;
+    margin-bottom: 80px;
+    .p-orange{
+        color:orange;
+        font-weight: bold;
+    }
+   }
+   .divider{
+    width: 100%;
+    height: 1px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #292831;
+   }
+}

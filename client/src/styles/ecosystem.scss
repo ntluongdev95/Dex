@@ -1,0 +1,28 @@
+@import '../golobal.scss';
+.eco_wrapper{
+    height: 600px;
+    width: 100%;
+    color:#bbbbbe;
+    background-color: #1c1b24;
+    padding:80px 40px;
+    @include display(none);
+    .eco_left{
+        width: 50%;
+        h1{
+            font-size: 3rem;
+        }
+        p{
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+          line-height: 30px;
+          span{
+              color:white;
+              font-weight: 600;
+          }
+        }
+    }
+    .eco_right{
+        display: flex;
+        
+    }
+}

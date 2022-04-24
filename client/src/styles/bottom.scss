@@ -1,0 +1,65 @@
+@import '../golobal.scss';
+.bottom__wrapper{
+    padding-top: 80px;
+    background-color: #1a1921;
+    .p{
+        text-align: center;
+        line-height: 30px;
+        color:#9e9ea2;
+        font-size: 1.2rem;
+        padding:0 40px;
+        line-height: 40px;
+        span{
+            color:white;
+        }
+    }
+    .a_bottom{
+       overflow: hidden;
+       margin-top: 42px;
+       transition: box-shadow 200ms ease, color 200ms ease;
+       color: #fff;
+       font-weight: 700;
+       text-decoration: none;
+       font-size: 1.2rem;
+       text-align: center;
+       cursor: pointer;
+       &:hover{
+           color:orange;
+       }
+       .divider{
+           width: 400px;
+           height: 1px;
+           background-color:orange;
+          margin: 10px auto;
+       }
+    }
+    .bootom_social-link{
+       @include display(center);
+       margin-top: 40px ;
+       padding-bottom: 40px;
+       .link_general{
+           margin: 0 30px;
+           cursor: pointer;
+           transition: all 3s ease;
+           &:hover{
+               img{
+                   transform: scale(1.07);
+               }
+               .link_name{
+                   color:white;
+               }
+           }
+           img{
+               width: 60px;
+               object-fit: contain;
+           }
+           .link_name{
+               text-align: center;
+               color:#9e9ea2;
+               font-weight: 300;
+               font-size: 0.9rem;
+           }
+       } 
+    }
+    
+}
