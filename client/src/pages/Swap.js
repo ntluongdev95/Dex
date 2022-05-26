@@ -56,6 +56,7 @@ function Swap() {
      useEffect(async()=>{
          if(buyActive){
           const total = await contract_MM?.methods.tokenBalance().call()
+          
           setTokenBalance(web3?.utils.fromWei(total,'ether'));
             const balance = await web3?.eth.getBalance(account)
             setAccountBalance(web3?.utils.fromWei(balance, 'ether'))  
@@ -69,7 +70,6 @@ function Swap() {
      useEffect(async()=>{
         if(sellActive){
          const total = await contract_Token?.methods.balanceOf(account).call()
-         console.log(total);
          setTokenBalance(web3?.utils.fromWei(total,'ether'));
            const balance = await contract_MM.methods.getETHBalance().call()
            setAccountBalance(web3?.utils.fromWei(balance, 'ether'))  
@@ -110,10 +110,9 @@ function Swap() {
     }
 
     const handleInputFromChange =async(input)=>{
-        if(input > tokenBalance){ toast.warn('Balance is not enough')}
+       // if(input > tokenBalance){ toast.warn('Balance is not enough')}
        setInputFrom((input))
        const ratio = await contract_MM?.methods?.tokenPriceInETH().call()
-       if(input *( web3.utils.fromWei(ratio,'ether')) > accountBalance){ toast.warn('ETH is not enough')}
        setInputTo(input *( web3.utils.fromWei(ratio,'ether')))
     }
     const handleInputToChange =async(input)=>{
@@ -138,10 +137,15 @@ function Swap() {
     }
     const handleSwapToken=async()=>{
         if(inputTo && inputFrom && buyActive){
-            const inputToFix = inputTo.toFixed(1)
-            contract_MM?.methods.buyToken(inputFrom).send({
+            const inputFromW =web3.utils.toWei(String(inputFrom), 'ether')
+            contract_MM?.methods.buyToken(inputFromW).send({
                 from:account,
-                value:web3.utils.toWei(String(inputToFix ), 'ether')
+                value:web3.utils.toWei(String(inputTo ), 'ether')
+            }).then(recipes=>{
+                setReRender(true)
+                toast.success(`You just bought token successfully`) 
+                setInputFrom(0)
+                setInputTo(0)
             })
         }
         if(inputTo && inputFrom && sellActive){
@@ -150,9 +154,11 @@ function Swap() {
                   from:account})
             await contract_Token.methods.allowance(account,contractAddress).send({from:account})
             contract_MM?.methods.sellToken(inputToW).send({
-                from:account },(err,data)=>{
-                    if(err){console.log(err);}
-                    console.log(data);
+                from:account }).then(recipes=>{
+                    setReRender(true)
+                    toast.success('You just sold token successfully') 
+                    setInputFrom(0)
+                    setInputTo(0)
                 })
            
         }
@@ -170,7 +176,6 @@ function Swap() {
                 </div>
                 <ul className='header_right'>
                     {coin.map(c=>(
-                        <>
                     <li key={c.id} className='show_price'>
                         {c.symbol}
                         {c.price_change_percentage_24h <0 ? (
@@ -180,7 +185,6 @@ function Swap() {
                         )}
                          <span> $ {c.current_price}</span>
                     </li>
-                    </>
                     ))}
                     {account ? (
                         <li className='connect_wallet account'>{`${account?.substring(0,5)}...${account?.substring(account.length -4)}`}</li>
@@ -267,7 +271,7 @@ function Swap() {
                                 </div>
                             ):(
                             <div className='connect_btn'>Connect Wallet</div>)}
-                            {!inputTo ==0 && !inputFrom==0 &&(
+                            { account && !inputTo ==0 && !inputFrom==0 &&(
                                 <div onClick={handleSwapToken} className='swap__btn'>Swap</div>
                             )}
                         </div>

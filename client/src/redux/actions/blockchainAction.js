@@ -1,7 +1,7 @@
 import Web3 from 'web3'
 import {  toast } from 'react-toastify';
 import { CONNECTION_FAILED, CONNECTION_REQUEST, CONNECTION_SUCCESS, UPDATE_ACCOUNT } from '../constants'
-const abi=[
+ const abi=[
 	{
 		"inputs": [
 			{
@@ -204,7 +204,8 @@ const abi=[
 		"type": "function"
 	}
 ]
-const tokenABI =[
+
+ const tokenABI =[
 	{
 		"inputs": [
 			{
